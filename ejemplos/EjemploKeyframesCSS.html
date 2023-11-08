@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movimientos con @keyframes</title>
+
+    <style>
+        .cube {
+            width: 100px;
+            height: 100px;
+            background: red;
+
+            position:relative;
+
+            animation-name: moverCubo;
+            animation-duration: 2s;
+            animation-direction: alternate; /* reverse, alternate, alternate-reverse */          
+            animation-timing-function: ease;
+            animation-iteration-count: infinite;
+
+        }
+
+        @keyframes moverCubo {
+            0% {
+                background: red;
+                left: 0px;
+                top: 0px;
+            }
+            25% {
+                background: green;
+                left: 200px;
+                top: 0px;
+            }
+            50% {
+                background: green;
+                left: 200px;
+                top: 200px;
+            }
+            75% {
+                background: green;
+                left: 0px;
+                top: 200px;
+            }
+            100% {
+                background: blue;
+                left: 0px;
+                top: 0px;
+            }
+
+        }
+
+
+        /*   Ejercicio Pelotita */
+        .vertical {
+            border: 2px dashed red;
+            position: relative;
+            width:50px;
+            height: 50px;
+            border-radius: 50%;
+            background: orange;
+            animation-name: moverVertical;
+            animation-duration: 1s;
+            animation-direction: alternate;
+            animation-iteration-count: infinite;
+            animation-timing-function: ease-in;
+
+        }
+
+        .lateral {
+            border: 2px dashed blue;
+            position: relative;
+            width: 50px;
+            height: 300px;
+            animation-name: moverHorizontal;
+            animation-duration: 10s;
+            animation-direction: alternate;
+            animation-iteration-count: infinite;
+            animation-timing-function: linear;
+        }
+
+        @keyframes moverHorizontal{
+            0%{
+                left:0px;
+            }
+            100%{
+                left:100%;
+            }
+        }
+
+        @keyframes moverVertical{
+            0%{
+                top:0px;
+            }
+            95%{
+                background: orange;
+            }
+            100%{
+                top: 300px;
+                background: red;
+            }
+        }
+
+
+
+
+    </style>
+</head>
+<body>
+    <h1>Animaciones "@KEYFRAMES"</h1>
+
+    <!-- Ejercicio Cubo -->
+    <div class="cube"></div>
+
+
+    <!-- Ejercicio Pelotita -->
+    <div class="lateral">
+        <div class="vertical"></div>
+    </div>
+
+</body>
+</html>
