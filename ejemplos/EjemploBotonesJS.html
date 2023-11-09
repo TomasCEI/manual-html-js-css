@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cosas JS</title>
+
+    <style>
+    .Box {
+        width: 100px;
+        height: 100px;
+        background-color: rgb(240, 191, 102);
+        border: 2px dashed blue;
+    }
+    .u-mover {
+            position: relative;
+            animation-name: moverHorizontal;
+            animation-duration: 5s;
+            animation-direction: alternate;
+            animation-iteration-count: infinite;
+            animation-timing-function: ease-in-out;
+        }
+
+
+
+    @keyframes moverHorizontal{
+        0%{
+            left:0px;
+        }
+        100%{
+            left:100%;
+            height: 20px;
+        }
+    }
+
+
+
+
+
+
+
+    .Container {
+        display: flex;
+        gap:10px;
+    }
+    .Article {
+        padding:15px;
+        box-shadow: 1px 1px 4px gray;
+        border-radius: 15px;
+        margin: 10px 0 10px 0;
+    }
+    .Menu {
+        padding:15px;
+        box-shadow: 1px 1px 4px gray;
+        border-radius: 15px;
+        margin: 10px 0 10px 0;
+
+        width: 50px;
+        transition: width 1s ease-in-out;
+    }
+
+
+    .Menu--open2 {
+        width:400px;
+        transition: width 1s ease-in-out;
+    }
+    </style>
+</head>
+<body>
+    <h1>Botones JS</h1>
+
+    <button id="btnToggle">Click Me (toggle)</button>
+    <button id="btnStart">Iniciar</button>
+    <button id="btnEnd">Detener</button>
+    <hr>
+    <div class="Box"></div>
+
+
+    <hr>
+    <button id="btnMenu">Menu</button>
+    <div class="Container">
+        <div class="Content">
+            <article class="Article">
+                <h1>Articulo 1</h1>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repellendus accusantium quod reiciendis nisi facilis. Aliquid est velit quos, sunt, ratione temporibus maiores delectus officiis, dolores odit asperiores optio? Deserunt, placeat!
+                </p>
+            </article>
+            <article class="Article">
+                <h1>Articulo 2</h1>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repellendus accusantium quod reiciendis nisi facilis. Aliquid est velit quos, sunt, ratione temporibus maiores delectus officiis, dolores odit asperiores optio? Deserunt, placeat!
+                </p>
+            </article>
+            <article class="Article">
+                <h1>Articulo 3</h1>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repellendus accusantium quod reiciendis nisi facilis. Aliquid est velit quos, sunt, ratione temporibus maiores delectus officiis, dolores odit asperiores optio? Deserunt, placeat!
+                </p>
+            </article>
+        </div>
+        <aside class="Menu">
+            <ul>
+                <li><a href="#"></a> Artículo 1</li>
+                <li><a href="#"></a> Artículo 2</li>
+                <li><a href="#"></a> Artículo 3</li>
+            </ul>
+
+        </aside>
+    </div>
+
+    <script>
+        const btnToggle = document.getElementById("btnToggle");
+        const btnStart = document.getElementById("btnStart");
+        const btnEnd = document.getElementById("btnEnd");
+
+        const box = document.querySelector(".Box");
+
+        btnToggle.addEventListener("click", toggleMover);
+        btnStart.addEventListener("click", startMover);
+        btnEnd.addEventListener("click", endMover);
+
+
+        function toggleMover(){
+            box.classList.toggle("u-mover");
+        }
+
+        function startMover(){
+            box.classList.add("u-mover");
+        }
+
+        function endMover(){
+            box.classList.remove("u-mover");
+        }
+
+
+        const btnMenu = document.getElementById("btnMenu");
+        const divMenu = document.querySelector(".Menu");
+        btnMenu.addEventListener("click", toggleMenu);
+
+        function toggleMenu(){
+            divMenu.classList.toggle("Menu--open2");
+        }
+    </script>
+</body>
+</html>
