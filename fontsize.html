@@ -6,21 +6,41 @@
     <title>EM vs REM vs PX</title>
 
     <style>
+        /* Para REM, y equivale a poner font de <html> */
         :root {
             font-size:16px;
+            /*  Variables CSS 
+
+            --font-size-base: 16px;  
+            --color-primary: #007bff;
+            --color-secondary: #6c757d;
+            */
         }
+
+        /* Asigna valores a todo el body */
+        body {
+            background:rgb(223, 223, 223);
+            /* font-size:16px; */
+            /* font-size: var(--font-size-base); */
+        }
+        /* asigna valores a TODSO los elementos */
         * {
             box-sizing: border-box;
             margin:0;
-            font-size:16px; 
+            /* font-size:16px;  */
         }
 
         .container {
             border: 1px solid black;
             padding:5px;
-
-             font-size:1rem;
+            font-size:1rem;
         }
+
+        /*  VARIABLES CSS
+        .elemento {
+            color: var(--color-primary);
+            background-color: var(--color-secondary);
+        } */
 
         .container article {
             border: 1px dashed red;
@@ -56,8 +76,7 @@
     </div>
 
 
-    <form action="">
-        
+    <!-- <form action="">
         <style>
             .radio input {
                 width: 20px;
@@ -78,9 +97,6 @@
         <label class="radio">Tercer Nombre
             <input type="radio" checked value="1" name="chk_valor">
         </label><br>
-
-
-
-    </form>
+    </form> -->
 </body>
 </html>

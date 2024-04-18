@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flex Stuff</title>
+
+    <style>
+        .flex {
+            display:flex;
+            gap: 4px;
+            filter: drop-shadow(2px 2px 2px rgba(0,0,0,0.5));
+            color:white;
+            font-weight: bold;
+            font-size: x-large;
+        }
+
+        .box {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100px;
+            width: 100px;
+            background-color: #eb9d37;
+            border: 3px solid black;
+            border-radius: 5px;
+            box-shadow: inset 10px 10px 10px rgb(253, 200, 102);
+        }
+
+  
+        .box.box2 {
+            width: 200px;
+        }
+
+        .ej1{
+            flex-direction: row-reverse;
+        }
+
+        .ej2 {
+            flex-wrap: wrap-reverse;
+        }
+
+        .ej3 {
+            align-self: flex-start;
+        }
+
+        .handBorder {
+            border:solid 5px rgb(0, 0, 0);
+            border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+        }
+        
+
+        .purpleBackground {
+            background:purple; 
+            padding:5px; 
+            height: 200px; 
+        }
+    </style>
+</head>
+<body>
+    
+    <h3>Flex direction</h3>
+    <div class="flex ej1">
+        <div class="box">1</div>
+        <div class="box">2</div>
+        <div class="box">3</div>
+        <div class="box">4</div>
+        <div class="box box2">5</div>
+        <div class="box">6</div>
+    </div>
+
+    <h3>Flex Wrap</h3>
+    <div class="flex ej2">
+        <div class="box">1</div>
+        <div class="box">2</div>
+        <div class="box">3</div>
+        <div class="box">4</div>
+        <div class="box box2">5</div>
+        <div class="box">6</div>
+    </div>
+
+    <h3>Align-Self</h3>
+    <div class="flex ej3 purpleBackground">
+        <div class="box">1</div>
+        <div class="box">2</div>
+        <div class="box">3</div>
+        <div class="box" style="align-self: flex-end;">4</div>
+        <div class="box box2">5</div>
+        <div class="box">6</div>
+    </div>
+</body>
+</html>
